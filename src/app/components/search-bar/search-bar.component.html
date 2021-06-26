@@ -1,0 +1,13 @@
+<form class="example search-bar" >
+  <input
+    #searchInput
+    type="text"
+    placeholder="Search.."
+    name="search"
+    id="searchInput"
+    (keyup)="onKeyPress(searchInput.value)"
+  />
+  <button type="button" (click)="onKeyPress(searchInput.value)">
+    <i class="fa fa-search"></i>
+  </button>
+</form>

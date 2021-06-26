@@ -1,0 +1,23 @@
+
+<div class="header">
+  <h2>Thoughts Spot</h2>
+</div>
+<div>
+  <app-search-bar (searchByText)="onSearchByText($event)"></app-search-bar>
+</div>
+<div style="float: left;width: 100%;margin-bottom: 2%;">
+  <div
+    *ngFor="let blog of allBlogs | paginate: { itemsPerPage: 3 , currentPage: p }"
+    class="gallery"
+    (click)="onSelect(blog)">
+    <a href="javascript:void(0)">
+        <img src="../../../assets/images/image.jpg" alt="Cinque Terre" width="300" height="200" />
+    </a>
+    <div class="desc">
+        <app-blog-rating [rating]="blog['rating']"></app-blog-rating>
+        {{ blog['description'] }}
+    </div>
+  </div>
+</div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

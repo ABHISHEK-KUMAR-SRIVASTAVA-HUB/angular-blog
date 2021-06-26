@@ -1,0 +1,55 @@
+
+<!-- TEMPLATE DRIVEN FORM -->
+<div class="container login-form">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmitForm(loginForm)" novalidate>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter email"
+          name="email"
+          #emailRef="ngModel"
+          ngModel
+          required
+          pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          >
+          <div *ngIf="emailRef.errors && (emailRef.dirty || emailRef.touched || loginForm.submitted)"
+            class="alert alert-danger">
+
+            <div *ngIf="emailRef.errors.required">
+              Email is required!
+            </div>
+            <div *ngIf="emailRef.errors.pattern">
+              Email is not valid!
+            </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Password"
+          name="password"
+          #passwordRef="ngModel"
+          ngModel
+          required
+          >
+
+          <div *ngIf="passwordRef.errors && (passwordRef.dirty || passwordRef.touched || loginForm.submitted)"
+          class="alert alert-danger">
+
+            <div *ngIf="passwordRef.errors.required">
+              password is required!
+            </div>
+
+          </div>
+      </div>
+
+      <button  type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,16 @@
+.blog-post{
+  padding: 2%;
+  width: 60%;
+}
+.header {
+  grid-area: header;
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+button:disabled{
+  background: gray ;
+  border-color: gray;
+  cursor: no-drop;
+}

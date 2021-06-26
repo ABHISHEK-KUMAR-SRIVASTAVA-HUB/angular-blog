@@ -1,0 +1,13 @@
+<div class="card">
+  <h2>{{selectedBlog['title']}}</h2>
+  <h5> Oct 2, 2018
+    <app-blog-rating [rating]="selectedBlog['rating']"></app-blog-rating>
+  </h5>
+  <div class="fakeimg" style="height: 200px">
+  <img src="../../../assets/images/image.jpg" alt="Cinque Terre" width="300" height="200" />
+  </div>
+
+  <p>{{selectedBlog['description']? selectedBlog['description']: ""}}</p>
+
+  <p>{{selectedBlog['detail'] ? selectedBlog['detail'] : ""}}</p>
+</div>
